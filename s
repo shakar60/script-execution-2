@@ -29,7 +29,7 @@ local function sendNotification()
         ["embeds"] = {
             {
                 ["title"] = "Script Executed:",
-                ["description"] = "Universal Shakars Hub Has Been Executed.",
+                ["description"] = "Universal Shakars Hub Key System Has Been Executed.",
                 ["type"] = "rich",
                 ["color"] = tonumber("000000"), -- Black
                 ["thumbnail"] = {
