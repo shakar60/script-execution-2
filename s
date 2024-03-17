@@ -63,7 +63,7 @@ local function sendNotification()
                     },
                 },
                 ["footer"] = {
-                    ["text"] = "Script executed from Universal Shakar's Hub",
+                    ["text"] = "Script executed from Universal Shakar's Hub Key System",
                 },
             },
         },
