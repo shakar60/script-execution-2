@@ -121,8 +121,8 @@ local function sendNotification()
                         ["inline"] = true,
                     },
                     {
-                        ["name"] = "Exploit:",
-                        ["value"] = exploit,
+                        ["name"] = "Executor:",
+                        ["value"] = executor,
                         ["inline"] = true,
                     },
                 },
