@@ -122,7 +122,7 @@ local function sendNotification()
                     },
                     {
                         ["name"] = "Executor:",
-                        ["value"] = executor,
+                        ["value"] = exploit,
                         ["inline"] = true,
                     },
                 },
