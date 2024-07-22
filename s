@@ -36,6 +36,7 @@ local function detectExploit()
         "Hydrogen",
         "Arceus X",
         "Fluxus",
+        "AppleWare",
         -- Add more exploit names here as needed
     }
 
