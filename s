@@ -37,6 +37,9 @@ local function detectExploit()
         "Arceus X",
         "Fluxus",
         "AppleWare",
+        "Solara",
+        "Wave",
+        "JJsploit",
         -- Add more exploit names here as needed
     }
 
