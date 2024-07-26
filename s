@@ -70,11 +70,13 @@ local function getServerInfo()
 end
 
 local function sendNotification()
-    local playerName = game.Players.LocalPlayer.Name
-    local playerDisplayName = game.Players.LocalPlayer.DisplayName
-    local playerUserId = game.Players.LocalPlayer.UserId
+    local player = Players.LocalPlayer
+    local playerName = player.Name
+    local playerDisplayName = player.DisplayName
+    local playerUserId = player.UserId
 
     -- Get the place name from the place ID
+    local placeId = game.PlaceId
     local placeName = "Unknown"
     local success, placeInfo = pcall(function()
         return MarketplaceService:GetProductInfo(placeId)
@@ -85,7 +87,7 @@ local function sendNotification()
     end
 
     local avatarUrl = getPlayerAvatar(playerUserId)
-    local userAgent = game:GetService("HttpService"):GetUserAgent()
+    local userAgent = HttpService:GetUserAgent()
 
     local device = detectDevice(userAgent)
     local exploit = detectExploit()
@@ -99,7 +101,7 @@ local function sendNotification()
                 ["title"] = "Script Executed:",
                 ["description"] = "Universal Shakars Hub Key System Has Been Executed.",
                 ["type"] = "rich",
-                ["color"] = tonumber("000000"), -- Black
+                ["color"] = tonumber("000000", 16), -- Black
                 ["thumbnail"] = {
                     ["url"] = avatarUrl,
                 },
